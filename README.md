@@ -1,18 +1,8 @@
 # helix-docker
 
+### This repository is a fork of Sourcegraph's [helix-docker](https://github.com/Sculas/helix-docker).
+
 This repository contains a collection of source files for building Docker images for Perforce Helix. It exists purely because there is no working Docker solution in existence for Perforce Helix.
-
-## helix-p4d
-
-This directory contains the source files for building a Perforce Helix core server Docker image. The published Docker images are available as [`sourcegraph/helix-p4d` on Docker Hub](https://hub.docker.com/r/sourcegraph/helix-p4d).
-
-### Build the docker image
-
-The `helix-p4d/build.sh` script will build the docker image for you. If you don't provide a tag to the script it will tag the image as `sourcegraph/helix-p4d:latest`
-
-```
-./build.sh <tag>
-```
 
 ### Usage
 
@@ -24,7 +14,7 @@ docker run --rm \
     sourcegraph/helix-p4d:2023.1
 ```
 
-The above command makes the server avaialble locally at `:1666`, with a default super user `admin` and its password `pass12349ers`.
+The above command makes the server avaialble locally at `:1666`, with a default super user `p4su` and its password `p4superuser351`.
 
 All available options and their default values:
 
@@ -34,8 +24,8 @@ P4HOME=/p4
 P4NAME=master
 P4TCP=1666
 P4PORT=1666
-P4USER=admin
-P4PASSWD=pass12349ers
+P4USER=p4su
+P4PASSWD=p4superuser351
 P4CASE=-C0
 P4CHARSET=utf8
 JNL_PREFIX=perforce-server
