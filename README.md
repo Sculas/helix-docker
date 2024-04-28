@@ -11,7 +11,7 @@ To have a disposable Perforce Helix core server running, simply do:
 ```sh
 docker run --rm \
     --publish 1666:1666 \
-    sourcegraph/helix-p4d:2023.1
+    ghcr.io/sculas/helix-docker:main
 ```
 
 The above command makes the server avaialble locally at `:1666`, with a default super user `p4su` and its password `p4superuser351`.
@@ -38,7 +38,7 @@ docker run --rm \
     --publish 1666:1666 \
     --env P4USER=amy \
     --env P4PASSWD=securepassword \
-    sourcegraph/helix-p4d:2023.1
+    ghcr.io/sculas/helix-docker:main
 ```
 
 > [!WARNING]
@@ -51,7 +51,7 @@ docker run -d \
     --publish 1666:1666 \
     --env P4PASSWD=securepassword \
     --volume ~/.helix-p4d-home:/p4 \
-    sourcegraph/helix-p4d:2023.1
+    ghcr.io/sculas/helix-docker:main
 ```
 
 Now you have a running server, please read our handbook for [how to set up the client side](https://handbook.sourcegraph.com/departments/technical-success/support/process/p4-enablement/).
@@ -78,7 +78,7 @@ docker run --rm \
     --env P4PORT=ssl:1666 \
     --env P4SSLDIR=/ssl \
     --volume ./ssl:/ssl \
-    sourcegraph/helix-p4d:2023.1
+    ghcr.io/sculas/helix-docker:main
 ```
 
 ## Credits
